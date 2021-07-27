@@ -17,7 +17,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -59,14 +58,15 @@ fun TextAndButton(name: MutableState<String>, nameEntered: MutableState<Boolean>
             placeholder = {
                 Text(text = stringResource(id = R.string.hint))
             },
-            modifier = Modifier.alignByBaseline(),
+            modifier = Modifier
+                .alignByBaseline()
+                .weight(1.0F),
             singleLine = true,
             keyboardOptions = KeyboardOptions(
                 autoCorrect = false,
                 capitalization = KeyboardCapitalization.Words,
-                imeAction = ImeAction.Done
             ),
-            keyboardActions = KeyboardActions(onDone = {
+            keyboardActions = KeyboardActions(onAny = {
                 nameEntered.value = true
             })
         )
