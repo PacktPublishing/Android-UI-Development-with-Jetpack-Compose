@@ -19,6 +19,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.tooling.preview.PreviewParameter
+import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
@@ -31,6 +34,12 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+@Preview
+fun GreetingWrapper() {
+    Greeting("Hello Compose")
+}
+
+@Composable
 fun Greeting(name: String) {
     Text(
         text = stringResource(id = R.string.hello, name),
@@ -40,6 +49,33 @@ fun Greeting(name: String) {
 }
 
 @Composable
+@Preview
+fun AltGreeting(name: String = "Hello Compose") {
+    Text(
+        text = stringResource(id = R.string.hello, name),
+        textAlign = TextAlign.Center,
+        style = MaterialTheme.typography.subtitle1
+    )
+}
+
+class HelloProvider : PreviewParameterProvider<String> {
+    override val values: Sequence<String>
+        get() = listOf("Hello Wrapper").asSequence()
+}
+
+@Composable
+@Preview
+fun AltGreeting2(@PreviewParameter(HelloProvider::class)
+                name: String) {
+    Text(
+        text = stringResource(id = R.string.hello, name),
+        textAlign = TextAlign.Center,
+        style = MaterialTheme.typography.subtitle1
+    )
+}
+
+@Composable
+@Preview
 fun Welcome() {
     Text(
         text = stringResource(id = R.string.welcome),
