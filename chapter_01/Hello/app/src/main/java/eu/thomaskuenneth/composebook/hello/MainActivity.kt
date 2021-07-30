@@ -34,7 +34,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-@Preview
+@Preview(group = "my-group-1")
 fun GreetingWrapper() {
     Greeting("Jetpack Compose")
 }
@@ -49,7 +49,7 @@ fun Greeting(name: String) {
 }
 
 @Composable
-@Preview
+@Preview(group = "my-group-1")
 fun AltGreeting(name: String = "Jetpack Compose") {
     Text(
         text = stringResource(id = R.string.hello, name),
