@@ -19,9 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.tooling.preview.PreviewParameter
-import androidx.compose.ui.tooling.preview.PreviewParameterProvider
+import androidx.compose.ui.tooling.preview.*
 import androidx.compose.ui.unit.dp
 
 class MainActivity : ComponentActivity() {
@@ -34,7 +32,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-@Preview(group = "my-group-1")
+@Preview(group = "my-group-1", device = Devices.AUTOMOTIVE_1024p)
 fun GreetingWrapper() {
     Greeting("Jetpack Compose")
 }
