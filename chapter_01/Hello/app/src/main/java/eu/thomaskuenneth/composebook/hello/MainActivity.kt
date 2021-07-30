@@ -36,7 +36,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 @Preview
 fun GreetingWrapper() {
-    Greeting("Hello Compose")
+    Greeting("Jetpack Compose")
 }
 
 @Composable
@@ -50,7 +50,7 @@ fun Greeting(name: String) {
 
 @Composable
 @Preview
-fun AltGreeting(name: String = "Hello Compose") {
+fun AltGreeting(name: String = "Jetpack Compose") {
     Text(
         text = stringResource(id = R.string.hello, name),
         textAlign = TextAlign.Center,
@@ -60,7 +60,7 @@ fun AltGreeting(name: String = "Hello Compose") {
 
 class HelloProvider : PreviewParameterProvider<String> {
     override val values: Sequence<String>
-        get() = listOf("Hello Wrapper").asSequence()
+        get() = listOf("PreviewParameterProvider").asSequence()
 }
 
 @Composable
@@ -75,7 +75,7 @@ fun AltGreeting2(@PreviewParameter(HelloProvider::class)
 }
 
 @Composable
-@Preview
+@Preview(locale = "de-rDE")
 fun Welcome() {
     Text(
         text = stringResource(id = R.string.welcome),
