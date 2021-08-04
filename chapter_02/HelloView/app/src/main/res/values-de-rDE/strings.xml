@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Hallo</string>
+    <string name="welcome">Willkommen. Wie ist dein Name?</string>
+    <string name="hello">Hallo, %1$s.\nSchön, dich zu treffen.</string>
+    <string name="done">Fertig</string>
+    <string name="hint">Dein Name</string>
+</resources>
