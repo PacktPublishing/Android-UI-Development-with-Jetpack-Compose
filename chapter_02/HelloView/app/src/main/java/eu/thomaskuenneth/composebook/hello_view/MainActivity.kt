@@ -39,6 +39,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun enableOrDisableButton() {
-        binding.done.isEnabled = binding.name.text.isNotEmpty()
+        binding.done.isEnabled = binding.name.text.isNotBlank()
     }
 }
