@@ -25,15 +25,17 @@ class MainActivity : AppCompatActivity() {
                 enableOrDisableButton()
             }
             visibility = VISIBLE
-            binding.done.visibility = VISIBLE
         }
-        binding.done.setOnClickListener {
-            val name = binding.name.text
-            if (name.isNotBlank()) {
-                binding.message.text = getString(R.string.hello, name)
-                binding.name.visibility = GONE
-                it.visibility = GONE
+        binding.done.run {
+            setOnClickListener {
+                val name = binding.name.text
+                if (name.isNotBlank()) {
+                    binding.message.text = getString(R.string.hello, name)
+                    binding.name.visibility = GONE
+                    it.visibility = GONE
+                }
             }
+            visibility = VISIBLE
         }
         enableOrDisableButton()
     }
