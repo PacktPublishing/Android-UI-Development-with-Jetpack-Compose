@@ -1,0 +1,19 @@
+@Composable
+fun ColoredTextDemo(
+    text: String = "",
+    color: Color = Color.Black
+) {
+    Text(
+        text = text,
+        style = TextStyle(color = color)
+    )
+}
+
+@Composable
+fun ShortColoredTextDemo(
+    text: String = "",
+    color: Color = Color.Black
+) = Text(
+    text = text,
+    style = TextStyle(color = color)
+)
