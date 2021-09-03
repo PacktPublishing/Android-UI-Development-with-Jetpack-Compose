@@ -8,6 +8,7 @@ class SandboxActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            // invoke your composable functions here
         }
     }
 }

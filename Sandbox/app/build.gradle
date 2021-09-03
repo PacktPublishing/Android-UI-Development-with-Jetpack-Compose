@@ -22,17 +22,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility 11
         targetCompatibility 11
     }
+
     kotlinOptions {
         jvmTarget = '11'
         useIR = true
     }
+
     buildFeatures {
         compose true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion compose_version
     }
