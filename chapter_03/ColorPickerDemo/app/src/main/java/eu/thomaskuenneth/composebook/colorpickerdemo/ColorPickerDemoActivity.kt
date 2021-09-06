@@ -16,6 +16,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.min
 
@@ -37,8 +39,13 @@ class ColorPickerDemoActivity : ComponentActivity() {
                         modifier = Modifier
                             .fillMaxWidth()
                             .background(color.value),
-                        text = color.value.toArgb().toString(6),
-                        style = MaterialTheme.typography.body1
+                        text = "#${color.value.toArgb().toUInt().toString(16)}",
+                        textAlign = TextAlign.Center,
+                        style = MaterialTheme.typography.h4.merge(
+                            TextStyle(
+                                color = color.value.complementary()
+                            )
+                        )
                     )
                 }
             }
@@ -53,13 +60,19 @@ fun ColorPicker(color: MutableState<Color>) {
     val blue = color.value.blue
     Column {
         Slider(
-            value = color.value.red,
+            value = red,
             onValueChange = { color.value = Color(it, green, blue) })
         Slider(
-            value = color.value.green,
+            value = green,
             onValueChange = { color.value = Color(red, it, blue) })
         Slider(
-            value = color.value.blue,
+            value = blue,
             onValueChange = { color.value = Color(red, green, it) })
     }
 }
+
+fun Color.complementary() = Color(
+    red = 1F - red,
+    green = 1F - green,
+    blue = 1F - blue
+)
