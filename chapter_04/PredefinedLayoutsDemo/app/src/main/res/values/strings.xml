@@ -2,4 +2,5 @@
     <string name="app_name">PredefinedLayoutsDemo</string>
     <string name="red">Red</string>
     <string name="green">Green</string>
+    <string name="blue">Blue</string>
 </resources>
