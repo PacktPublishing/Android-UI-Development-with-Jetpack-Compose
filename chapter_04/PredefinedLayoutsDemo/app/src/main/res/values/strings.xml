@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">ColorPickerDemo</string>
+    <string name="app_name">PredefinedLayoutsDemo</string>
+    <string name="red">Red</string>
+    <string name="green">Green</string>
 </resources>
