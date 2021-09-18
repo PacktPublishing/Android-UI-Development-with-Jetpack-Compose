@@ -50,7 +50,6 @@ fun ConstraintLayoutDemo() {
             label = stringResource(id = R.string.red),
             state = red,
             modifier = Modifier.constrainAs(cbRed) {
-                start.linkTo(parent.start)
                 top.linkTo(parent.top)
             }
         )
