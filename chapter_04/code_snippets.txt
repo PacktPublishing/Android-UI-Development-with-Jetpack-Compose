@@ -1,0 +1,15 @@
+@Composable
+@Preview
+fun ColumnWithTexts() {
+    Column {
+        Text(
+            text = "Android UI development with Jetpack Compose",
+            style = MaterialTheme.typography.h3,
+        )
+        Text(
+            text = "Hello Compose",
+            style = MaterialTheme
+                .typography.h5.merge(TextStyle(color = Color.Red))
+        )
+    }
+}
