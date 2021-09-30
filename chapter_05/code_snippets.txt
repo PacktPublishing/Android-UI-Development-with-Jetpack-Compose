@@ -1,0 +1,4 @@
+var counter by observable(-1) { _, oldValue, newValue ->
+  println("$oldValue -> $newValue")
+}
+for (i in 0..3) counter = i
