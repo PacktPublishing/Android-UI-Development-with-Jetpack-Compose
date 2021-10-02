@@ -6,7 +6,7 @@ plugins {
 android {
     compileSdk 31
     defaultConfig {
-        applicationId "eu.thomaskuenneth.composebook.predefinedlayoutsdemo"
+        applicationId "eu.thomaskuenneth.composebook.statedemo"
         minSdk 29
         targetSdk 31
         versionCode 1
