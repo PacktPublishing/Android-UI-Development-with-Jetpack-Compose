@@ -4,11 +4,15 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material.Button
 import androidx.compose.material.Text
+import androidx.compose.material.TextField
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.tooling.preview.Preview
 import java.util.*
 import kotlin.random.Random
@@ -17,9 +21,29 @@ class StateDemoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            RememberWithKeyDemo()
+            // RememberWithKeyDemo()
+            TextFieldDemo()
         }
     }
+}
+
+@Composable
+@Preview
+fun TextFieldDemo() {
+    val state = remember { mutableStateOf(TextFieldValue("")) }
+    TextFieldDemo(state)
+}
+
+@Composable
+fun TextFieldDemo(state: MutableState<TextFieldValue>) {
+    TextField(
+        value = state.value,
+        onValueChange = {
+            state.value = it
+        },
+        placeholder = { Text("Hello") },
+        modifier = Modifier.fillMaxWidth()
+    )
 }
 
 @Composable
