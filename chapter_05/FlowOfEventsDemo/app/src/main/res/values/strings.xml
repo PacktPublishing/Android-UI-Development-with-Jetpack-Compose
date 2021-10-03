@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FlowOfEventsDemo</string>
+    <string name="placeholder">temperature</string>
+    <string name="convert">Convert</string>
+    <string name="celsius">°C</string>
+    <string name="fahrenheit">°F</string>
+    <string name="template">%1$s %2$s</string>
+</resources>
