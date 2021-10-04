@@ -43,7 +43,8 @@ class ViewModelDemoActivity : ComponentActivity() {
 
 @Composable
 @Preview
-fun ViewModelDemo(viewModel: MyViewModel = viewModel()) {
+fun ViewModelDemo() {
+    val viewModel: MyViewModel = viewModel()
     val state1 = remember {
         mutableStateOf("Hello #1")
     }
