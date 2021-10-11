@@ -9,6 +9,7 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -21,21 +22,17 @@ import eu.thomaskuenneth.composebook.composeunitconverter.viewmodels.Temperature
 fun TemperatureConverter(viewModel: TemperatureViewModel) {
     val strCelsius = stringResource(id = R.string.celsius)
     val strFahrenheit = stringResource(id = R.string.fahrenheit)
-    val temperature = remember { mutableStateOf("") }
+    val temperature = rememberSaveable { mutableStateOf("") }
     val scale = viewModel.scale.observeAsState(initial = R.string.celsius)
-    var convertedTemperature by remember { mutableStateOf(Float.NaN) }
+    val convertedTemperature by viewModel.convertedTemperature.observeAsState(Float.NaN)
     val calc = {
-        val temp = temperature.value.toFloat()
-        convertedTemperature = if (scale.value == R.string.celsius)
-            (temp * 1.8F) + 32F
-        else
-            (temp - 32F) / 1.8F
+        viewModel.updateConvertedTemperature(temperature.value.toFloat())
     }
     val result = remember(convertedTemperature) {
         if (convertedTemperature.isNaN())
             ""
         else
-            "${convertedTemperature}${
+            "$convertedTemperature${
                 if (scale.value == R.string.celsius)
                     strFahrenheit
                 else strCelsius
