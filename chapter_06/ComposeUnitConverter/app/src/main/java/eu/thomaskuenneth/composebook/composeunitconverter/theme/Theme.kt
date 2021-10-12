@@ -28,7 +28,6 @@ fun ComposeUnitConverterTheme(
     } else {
         LightColorPalette
     }
-
     MaterialTheme(
         colors = colors,
         typography = Typography,
