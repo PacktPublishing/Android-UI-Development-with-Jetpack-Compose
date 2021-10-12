@@ -1,4 +1,4 @@
-package eu.thomaskuenneth.composebook.composeunitconverter
+package eu.thomaskuenneth.composebook.composeunitconverter.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -9,50 +9,53 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
+import eu.thomaskuenneth.composebook.composeunitconverter.R
 import eu.thomaskuenneth.composebook.composeunitconverter.viewmodels.TemperatureViewModel
 
 @Composable
 fun TemperatureConverter(viewModel: TemperatureViewModel) {
     val strCelsius = stringResource(id = R.string.celsius)
     val strFahrenheit = stringResource(id = R.string.fahrenheit)
-    val temperature = rememberSaveable { mutableStateOf("") }
-    val scale = viewModel.scale.observeAsState(initial = R.string.celsius)
-    val convertedTemperature by viewModel.convertedTemperature.observeAsState(Float.NaN)
+    val currentValue = viewModel.temperature.observeAsState(viewModel.temperature.value ?: "")
+    val scale = viewModel.scale.observeAsState(viewModel.scale.value ?: R.string.celsius)
+    var result by remember { mutableStateOf("") }
     val calc = {
-        viewModel.updateConvertedTemperature(temperature.value.toFloat())
-    }
-    val result = remember(convertedTemperature) {
-        if (convertedTemperature.isNaN())
+        val temp = viewModel.convert()
+        result = if (temp.isNaN())
             ""
         else
-            "$convertedTemperature${
+            "$temp${
                 if (scale.value == R.string.celsius)
                     strFahrenheit
                 else strCelsius
             }"
     }
-    val enabled = temperature.value.isNotBlank()
+    val enabled by remember(currentValue.value) {
+        mutableStateOf(!viewModel.getTemperatureAsFloat().isNaN())
+    }
     Column(
         modifier = Modifier
             .fillMaxSize()
             .padding(16.dp), horizontalAlignment = Alignment.CenterHorizontally
     ) {
         TemperatureTextField(
-            temperature = temperature,
+            temperature = currentValue,
             modifier = Modifier.padding(bottom = 16.dp),
-            callback = calc
+            callback = calc,
+            viewModel = viewModel
         )
         TemperatureScaleButtonGroup(
             selected = scale,
             modifier = Modifier.padding(bottom = 16.dp)
-        ) { resId: Int -> viewModel.setScale(resId) }
+        ) { resId: Int ->
+            viewModel.setScale(resId)
+        }
         Button(
             onClick = calc,
             enabled = enabled
@@ -70,14 +73,15 @@ fun TemperatureConverter(viewModel: TemperatureViewModel) {
 
 @Composable
 fun TemperatureTextField(
-    temperature: MutableState<String>,
+    temperature: State<String>,
     modifier: Modifier = Modifier,
-    callback: () -> Unit
+    callback: () -> Unit,
+    viewModel: TemperatureViewModel
 ) {
     TextField(
         value = temperature.value,
         onValueChange = {
-            temperature.value = it
+            viewModel.setTemperature(it)
         },
         placeholder = {
             Text(text = stringResource(id = R.string.placeholder))

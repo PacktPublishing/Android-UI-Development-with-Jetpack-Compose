@@ -7,5 +7,9 @@
     <string name="celsius">°C</string>
     <string name="fahrenheit">°F</string>
     <string name="template">%1$s %2$s</string>
+    <string name="temperature">Temperature</string>
+
+    <!-- distance -->
+    <string name="distances">Distances</string>
 
 </resources>
