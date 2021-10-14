@@ -11,11 +11,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 // import androidx.compose.material.Typography
-// import androidx.compose.ui.text.TextStyle
 // import androidx.compose.ui.unit.sp
 // import androidx.compose.foundation.shape.CutCornerShape
 // import androidx.compose.material.Shapes
-// import androidx.compose.ui.unit.dp
 
 val AndroidGreen = Color(0xFF3DDC84)
 val AndroidGreenDark = Color(0xFF20B261)
