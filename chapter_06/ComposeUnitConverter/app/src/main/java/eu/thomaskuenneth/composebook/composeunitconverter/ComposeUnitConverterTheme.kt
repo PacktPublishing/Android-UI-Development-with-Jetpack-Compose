@@ -6,6 +6,10 @@ import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+
+// import androidx.compose.material.Typography
+// import androidx.compose.ui.text.TextStyle
+// import androidx.compose.ui.unit.sp
 // import androidx.compose.foundation.shape.CutCornerShape
 // import androidx.compose.material.Shapes
 // import androidx.compose.ui.unit.dp
@@ -41,6 +45,7 @@ fun ComposeUnitConverterTheme(
     }
     MaterialTheme(
         colors = colors,
+//        typography = Typography(button = TextStyle(fontSize = 24.sp)),
 //        shapes = Shapes(small = CutCornerShape(8.dp)),
         content = content
     )
