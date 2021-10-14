@@ -6,6 +6,9 @@ import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
+// import androidx.compose.foundation.shape.CutCornerShape
+// import androidx.compose.material.Shapes
+// import androidx.compose.ui.unit.dp
 
 val AndroidGreen = Color(0xFF3DDC84)
 val AndroidGreenDark = Color(0xFF20B261)
@@ -38,6 +41,7 @@ fun ComposeUnitConverterTheme(
     }
     MaterialTheme(
         colors = colors,
+//        shapes = Shapes(small = CutCornerShape(8.dp)),
         content = content
     )
 }
