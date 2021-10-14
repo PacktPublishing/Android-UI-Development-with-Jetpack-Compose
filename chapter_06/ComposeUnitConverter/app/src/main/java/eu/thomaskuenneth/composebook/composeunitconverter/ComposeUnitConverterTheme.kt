@@ -15,13 +15,15 @@ val OrangeDark = Color(0xFFCC8400)
 private val DarkColorPalette = darkColors(
     primary = AndroidGreenDark,
     primaryVariant = AndroidGreenDark,
-    secondary = OrangeDark
+    secondary = OrangeDark,
+    secondaryVariant = OrangeDark
 )
 
 private val LightColorPalette = lightColors(
     primary = AndroidGreen,
     primaryVariant = AndroidGreenDark,
-    secondary = Orange
+    secondary = Orange,
+    secondaryVariant = OrangeDark
 )
 
 @Composable
