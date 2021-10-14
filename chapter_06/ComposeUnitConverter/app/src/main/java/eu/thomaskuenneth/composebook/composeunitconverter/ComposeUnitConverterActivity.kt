@@ -20,7 +20,6 @@ import androidx.navigation.compose.rememberNavController
 import eu.thomaskuenneth.composebook.composeunitconverter.screens.ComposeUnitConverterScreen
 import eu.thomaskuenneth.composebook.composeunitconverter.screens.DistancesConverter
 import eu.thomaskuenneth.composebook.composeunitconverter.screens.TemperatureConverter
-import eu.thomaskuenneth.composebook.composeunitconverter.theme.ComposeUnitConverterTheme
 import eu.thomaskuenneth.composebook.composeunitconverter.viewmodels.ViewModelFactory
 import kotlinx.coroutines.launch
 
