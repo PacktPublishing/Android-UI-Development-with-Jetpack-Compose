@@ -1,11 +1,14 @@
 package eu.thomaskuenneth.composebook.composeunitconverter
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
+import androidx.compose.foundation.layout.*
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 
 // import androidx.compose.material.Typography
 // import androidx.compose.ui.text.TextStyle
@@ -49,4 +52,32 @@ fun ComposeUnitConverterTheme(
 //        shapes = Shapes(small = CutCornerShape(8.dp)),
         content = content
     )
+}
+
+@Composable
+@Preview
+fun MaterialThemeDemo() {
+    MaterialTheme(
+        typography = Typography(
+            h1 = TextStyle(color = Color.Red)
+        )
+    ) {
+        Row {
+            Text(
+                text = "Hello",
+                style = MaterialTheme.typography.h1
+            )
+            Spacer(modifier = Modifier.width(2.dp))
+            MaterialTheme(
+                typography = Typography(
+                    h1 = TextStyle(color = Color.Blue)
+                )
+            ) {
+                Text(
+                    text = "Compose",
+                    style = MaterialTheme.typography.h1
+                )
+            }
+        }
+    }
 }
