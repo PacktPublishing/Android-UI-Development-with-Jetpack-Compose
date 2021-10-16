@@ -10,6 +10,7 @@ import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.runtime.*
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.NavHostController
@@ -52,21 +53,10 @@ fun ComposeUnitConverter(factory: ViewModelFactory) {
                 ComposeUnitConverterBottomBar(navController)
             }
         ) {
-            NavHost(
+            ComposeUnitConverterNavHost(
                 navController = navController,
-                startDestination = ComposeUnitConverterScreen.route_temperature
-            ) {
-                composable(ComposeUnitConverterScreen.route_temperature) {
-                    TemperatureConverter(
-                        viewModel = viewModel(factory = factory)
-                    )
-                }
-                composable(ComposeUnitConverterScreen.route_distances) {
-                    DistancesConverter(
-                        viewModel = viewModel()
-                    )
-                }
-            }
+                factory = factory
+            )
         }
     }
 }
@@ -126,6 +116,28 @@ fun ComposeUnitConverterBottomBar(navController: NavHostController) {
                     )
                 },
                 alwaysShowLabel = false
+            )
+        }
+    }
+}
+
+@Composable
+fun ComposeUnitConverterNavHost(
+    navController: NavHostController,
+    factory: ViewModelProvider.Factory?
+) {
+    NavHost(
+        navController = navController,
+        startDestination = ComposeUnitConverterScreen.route_temperature
+    ) {
+        composable(ComposeUnitConverterScreen.route_temperature) {
+            TemperatureConverter(
+                viewModel = viewModel(factory = factory)
+            )
+        }
+        composable(ComposeUnitConverterScreen.route_distances) {
+            DistancesConverter(
+                viewModel = viewModel()
             )
         }
     }
