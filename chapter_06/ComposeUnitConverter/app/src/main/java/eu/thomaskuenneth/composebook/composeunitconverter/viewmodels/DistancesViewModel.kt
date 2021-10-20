@@ -1,6 +1,7 @@
 package eu.thomaskuenneth.composebook.composeunitconverter.viewmodels
 
 import androidx.lifecycle.ViewModel
+import eu.thomaskuenneth.composebook.composeunitconverter.Repository
 
-class DistancesViewModel: ViewModel() {
+class DistancesViewModel(private val repository: Repository) : ViewModel() {
 }

@@ -10,5 +10,5 @@ class ViewModelFactory(private val repository: Repository) :
         if (modelClass.isAssignableFrom(TemperatureViewModel::class.java))
             TemperatureViewModel(repository) as T
         else
-            DistancesViewModel() as T
+            DistancesViewModel(repository) as T
 }
