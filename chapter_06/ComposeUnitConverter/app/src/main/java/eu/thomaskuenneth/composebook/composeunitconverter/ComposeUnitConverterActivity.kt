@@ -137,7 +137,7 @@ fun ComposeUnitConverterNavHost(
         }
         composable(ComposeUnitConverterScreen.route_distances) {
             DistancesConverter(
-                viewModel = viewModel()
+                viewModel = viewModel(factory = factory)
             )
         }
     }
