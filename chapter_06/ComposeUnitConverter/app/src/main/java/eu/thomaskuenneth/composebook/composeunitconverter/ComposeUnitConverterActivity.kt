@@ -27,7 +27,7 @@ import kotlinx.coroutines.launch
 class ComposeUnitConverterActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val factory = ViewModelFactory(Repository(this))
+        val factory = ViewModelFactory(Repository(applicationContext))
         setContent {
             ComposeUnitConverter(factory)
         }
