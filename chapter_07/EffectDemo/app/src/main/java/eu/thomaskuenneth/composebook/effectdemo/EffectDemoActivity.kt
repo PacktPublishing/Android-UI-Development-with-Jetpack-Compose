@@ -56,6 +56,12 @@ fun LaunchedEffectDemo() {
                 Text(text = stringResource(id = R.string.stop))
             }
             if (clickCount > 0) {
+                DisposableEffect(clickCount) {
+                    println("init: clickCount is $clickCount")
+                    onDispose {
+                        println("dispose: clickCount is $clickCount")
+                    }
+                }
                 LaunchedEffect(clickCount) {
                     counter = 0
                     while (isActive) {
