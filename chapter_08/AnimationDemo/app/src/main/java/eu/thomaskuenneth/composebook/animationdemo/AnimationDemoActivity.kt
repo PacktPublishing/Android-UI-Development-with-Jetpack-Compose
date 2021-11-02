@@ -3,10 +3,9 @@ package eu.thomaskuenneth.composebook.animationdemo
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.animation.slideInHorizontally
-import androidx.compose.animation.slideOutVertically
+import androidx.compose.animation.*
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
@@ -24,7 +23,8 @@ class AnimationDemoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AnimatedVisibilityDemo()
+            // AnimatedVisibilityDemo()
+            SingleValueAnimationDemo()
         }
     }
 }
@@ -66,5 +66,40 @@ fun AnimatedVisibilityDemo() {
                     .size(128.dp)
             )
         }
+    }
+}
+
+@Composable
+@Preview
+fun SingleValueAnimationDemo() {
+    var toggled by remember {
+        mutableStateOf(false)
+    }
+    val color by animateColorAsState(
+        targetValue = if (toggled)
+            Color.White
+        else
+            Color.Red,
+        animationSpec = spring(stiffness = Spring.StiffnessVeryLow)
+    )
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Button(onClick = {
+            toggled = !toggled
+        }) {
+            Text(
+                stringResource(R.string.toggle)
+            )
+        }
+        Box(
+            modifier = Modifier
+                .padding(top = 32.dp)
+                .background(color = color)
+                .size(128.dp)
+        )
     }
 }
