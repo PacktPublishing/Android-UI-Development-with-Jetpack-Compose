@@ -5,15 +5,16 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -23,7 +24,7 @@ class AnimationDemoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AnimationDemo()
+            AnimatedVisibilityDemo()
         }
     }
 }
@@ -31,7 +32,7 @@ class AnimationDemoActivity : ComponentActivity() {
 @ExperimentalAnimationApi
 @Composable
 @Preview
-fun AnimationDemo() {
+fun AnimatedVisibilityDemo() {
     var visible by remember {
         mutableStateOf(false)
     }
@@ -44,15 +45,25 @@ fun AnimationDemo() {
         Button(onClick = {
             visible = !visible
         }) {
-            Text(stringResource(id = R.string.click))
+            Text(
+                stringResource(
+                    id = if (visible)
+                        R.string.hide
+                    else
+                        R.string.show
+                )
+            )
         }
         AnimatedVisibility(
-            visible = visible
+            visible = visible,
+            enter = slideInHorizontally(),
+            exit = slideOutVertically()
         ) {
-            Text(
-                text = stringResource(id = R.string.app_name),
-                modifier = Modifier.padding(top = 32.dp),
-                style = MaterialTheme.typography.h4
+            Box(
+                modifier = Modifier
+                    .padding(top = 32.dp)
+                    .background(color = Color.Red)
+                    .size(128.dp)
             )
         }
     }

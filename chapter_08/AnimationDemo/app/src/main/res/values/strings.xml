@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AnimationDemo</string>
-    <string name="click">Click me</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
 </resources>
