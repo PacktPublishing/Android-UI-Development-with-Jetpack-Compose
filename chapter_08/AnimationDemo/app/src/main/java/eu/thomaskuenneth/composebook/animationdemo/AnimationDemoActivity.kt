@@ -24,10 +24,42 @@ class AnimationDemoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            StateChangeDemo()
             // AnimatedVisibilityDemo()
             // SingleValueAnimationDemo()
-            MultipleValuesAnimationDemo()
+            // MultipleValuesAnimationDemo()
         }
+    }
+}
+
+@Composable
+fun StateChangeDemo() {
+    var toggled by remember {
+        mutableStateOf(false)
+    }
+    val color  = if (toggled)
+        Color.White
+    else
+        Color.Red
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Button(onClick = {
+            toggled = !toggled
+        }) {
+            Text(
+                stringResource(R.string.toggle)
+            )
+        }
+        Box(
+            modifier = Modifier
+                .padding(top = 32.dp)
+                .background(color = color)
+                .size(128.dp)
+        )
     }
 }
 
