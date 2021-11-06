@@ -9,6 +9,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.Button
+import androidx.compose.material.Slider
 import androidx.compose.material.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
@@ -24,10 +25,11 @@ class AnimationDemoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            StateChangeDemo()
-            // AnimatedVisibilityDemo()
+            // StateChangeDemo()
             // SingleValueAnimationDemo()
             // MultipleValuesAnimationDemo()
+            // AnimatedVisibilityDemo()
+            SizeChangeAnimationDemo()
         }
     }
 }
@@ -37,7 +39,7 @@ fun StateChangeDemo() {
     var toggled by remember {
         mutableStateOf(false)
     }
-    val color  = if (toggled)
+    val color = if (toggled)
         Color.White
     else
         Color.Red
@@ -60,46 +62,6 @@ fun StateChangeDemo() {
                 .background(color = color)
                 .size(128.dp)
         )
-    }
-}
-
-@ExperimentalAnimationApi
-@Composable
-@Preview
-fun AnimatedVisibilityDemo() {
-    var visible by remember {
-        mutableStateOf(false)
-    }
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Button(onClick = {
-            visible = !visible
-        }) {
-            Text(
-                stringResource(
-                    id = if (visible)
-                        R.string.hide
-                    else
-                        R.string.show
-                )
-            )
-        }
-        AnimatedVisibility(
-            visible = visible,
-            enter = slideInHorizontally(),
-            exit = slideOutVertically()
-        ) {
-            Box(
-                modifier = Modifier
-                    .padding(top = 32.dp)
-                    .background(color = Color.Red)
-                    .size(128.dp)
-            )
-        }
     }
 }
 
@@ -184,5 +146,73 @@ fun MultipleValuesAnimationDemo() {
                 modifier = Modifier.rotate(degrees = degrees)
             )
         }
+    }
+}
+
+@ExperimentalAnimationApi
+@Composable
+@Preview
+fun AnimatedVisibilityDemo() {
+    var visible by remember {
+        mutableStateOf(false)
+    }
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Button(onClick = {
+            visible = !visible
+        }) {
+            Text(
+                stringResource(
+                    id = if (visible)
+                        R.string.hide
+                    else
+                        R.string.show
+                )
+            )
+        }
+        AnimatedVisibility(
+            visible = visible,
+            enter = slideInHorizontally(),
+            exit = slideOutVertically()
+        ) {
+            Box(
+                modifier = Modifier
+                    .padding(top = 32.dp)
+                    .background(color = Color.Red)
+                    .size(128.dp)
+            )
+        }
+    }
+}
+
+@Composable
+fun SizeChangeAnimationDemo() {
+    var size by remember { mutableStateOf(1F) }
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp)
+    ) {
+        Slider(
+            value = size,
+            valueRange = (1F..4F),
+            steps = 3,
+            onValueChange = {
+                size = it
+            },
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
+        Text(
+            text = stringResource(id = R.string.lines),
+            modifier = Modifier
+                .fillMaxWidth()
+                .background(Color.White)
+                .animateContentSize(),
+            maxLines = size.toInt(), color = Color.Blue
+        )
     }
 }

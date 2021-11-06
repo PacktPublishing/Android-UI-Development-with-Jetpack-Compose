@@ -3,4 +3,5 @@
     <string name="show">Show</string>
     <string name="hide">Hide</string>
     <string name="toggle">Toggle</string>
+    <string name="lines">#1\n#2\n#3\n#4\n#5</string>
 </resources>
