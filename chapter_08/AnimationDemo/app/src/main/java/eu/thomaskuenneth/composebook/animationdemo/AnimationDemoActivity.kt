@@ -8,9 +8,7 @@ import androidx.compose.animation.core.*
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.Button
-import androidx.compose.material.Slider
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -29,7 +27,8 @@ class AnimationDemoActivity : ComponentActivity() {
             // SingleValueAnimationDemo()
             // MultipleValuesAnimationDemo()
             // AnimatedVisibilityDemo()
-            SizeChangeAnimationDemo()
+            // SizeChangeAnimationDemo()
+            CrossfadeAnimationDemo()
         }
     }
 }
@@ -213,6 +212,55 @@ fun SizeChangeAnimationDemo() {
                 .background(Color.White)
                 .animateContentSize(),
             maxLines = size.toInt(), color = Color.Blue
+        )
+    }
+}
+
+@Composable
+fun CrossfadeAnimationDemo() {
+    var isFirstScreen by remember { mutableStateOf(true) }
+    Column(
+        modifier = Modifier
+            .fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Switch(
+            checked = isFirstScreen,
+            onCheckedChange = {
+                isFirstScreen = !isFirstScreen
+            },
+            modifier = Modifier.padding(top = 16.dp, bottom = 16.dp)
+        )
+        Crossfade(targetState = isFirstScreen) { it ->
+            if (it) {
+                Screen(
+                    text = stringResource(id = R.string.letter_w),
+                    backgroundColor = Color.Gray
+                )
+            } else {
+                Screen(
+                    text = stringResource(id = R.string.letter_i),
+                    backgroundColor = Color.LightGray
+                )
+            }
+        }
+    }
+}
+
+@Composable
+fun Screen(
+    text: String,
+    backgroundColor: Color = Color.White
+) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = backgroundColor),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            text = text,
+            style = MaterialTheme.typography.h1
         )
     }
 }

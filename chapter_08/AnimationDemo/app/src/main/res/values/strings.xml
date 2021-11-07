@@ -4,4 +4,6 @@
     <string name="hide">Hide</string>
     <string name="toggle">Toggle</string>
     <string name="lines">#1\n#2\n#3\n#4\n#5</string>
+    <string name="letter_w">W</string>
+    <string name="letter_i">I</string>
 </resources>
