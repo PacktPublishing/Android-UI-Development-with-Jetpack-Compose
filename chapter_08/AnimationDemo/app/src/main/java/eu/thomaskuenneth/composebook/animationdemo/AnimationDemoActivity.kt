@@ -28,7 +28,8 @@ class AnimationDemoActivity : ComponentActivity() {
             // MultipleValuesAnimationDemo()
             // AnimatedVisibilityDemo()
             // SizeChangeAnimationDemo()
-            CrossfadeAnimationDemo()
+            // CrossfadeAnimationDemo()
+            InfiniteRepeatableDemo()
         }
     }
 }
@@ -262,5 +263,26 @@ fun Screen(
             text = text,
             style = MaterialTheme.typography.h1
         )
+    }
+}
+
+@Composable
+fun InfiniteRepeatableDemo() {
+    val infiniteTransition = rememberInfiniteTransition()
+    val degrees by infiniteTransition.animateFloat(
+        initialValue = 0F,
+        targetValue = 359F,
+        animationSpec = infiniteRepeatable(animation = keyframes {
+            durationMillis = 1500
+            0F at 0
+            359F at 1500
+        })
+    )
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(text = stringResource(id = R.string.app_name),
+        modifier = Modifier.rotate(degrees = degrees))
     }
 }
