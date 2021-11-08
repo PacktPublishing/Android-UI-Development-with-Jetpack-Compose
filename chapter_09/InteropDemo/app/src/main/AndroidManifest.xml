@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="eu.thomaskuenneth.composebook.interopdemo">
+
+    <application
+        android:allowBackup="true"
+        android:fullBackupOnly="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar">
+        <activity
+            android:name="eu.thomaskuenneth.composebook.interopdemo.ViewActivity"
+            android:exported="true"
+            android:label="@string/view_activity"
+            android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="eu.thomaskuenneth.composebook.interopdemo.ComposeActivity"
+            android:exported="true"
+            android:label="@string/compose_activity" />
+    </application>
+
+</manifest>
