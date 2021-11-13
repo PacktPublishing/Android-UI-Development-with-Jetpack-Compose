@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../../../../layout/compose-model-1632754241147.xml" value="0.1" />
+        <entry key="../../../../../../../layout/compose-model-1632756548970.xml" value="0.2204391891891892" />
+        <entry key="..\:/Users/tkuen/Entwicklung/GitHub/Android-UI-Development-with-Jetpack-Compose/chapter_09/ZxingDemo/app/src/main/res/layout/activity_custom_scanner.xml" value="0.2259963768115942" />
+        <entry key="..\:/Users/tkuen/Entwicklung/GitHub/Android-UI-Development-with-Jetpack-Compose/chapter_09/ZxingDemo/app/src/main/res/layout/barcodeview.xml" value="0.12447916666666667" />
+        <entry key="..\:/Users/tkuen/Entwicklung/GitHub/Android-UI-Development-with-Jetpack-Compose/chapter_09/ZxingDemo/app/src/main/res/layout/continuous_scan.xml" value="0.12447916666666667" />
+        <entry key="..\:/Users/tkuen/Entwicklung/GitHub/Android-UI-Development-with-Jetpack-Compose/chapter_09/ZxingDemo/app/src/main/res/layout/custom_barcode_scanner.xml" value="0.12447916666666667" />
+        <entry key="..\:/Users/tkuen/Entwicklung/GitHub/Android-UI-Development-with-Jetpack-Compose/chapter_09/ZxingDemo/app/src/main/res/layout/layout.xml" value="0.23052536231884058" />
+        <entry key="app/src/main/res/layout/activity_view.xml" value="0.11041666666666666" />
+        <entry key="app/src/main/res/layout/layout.xml" value="0.15625" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
