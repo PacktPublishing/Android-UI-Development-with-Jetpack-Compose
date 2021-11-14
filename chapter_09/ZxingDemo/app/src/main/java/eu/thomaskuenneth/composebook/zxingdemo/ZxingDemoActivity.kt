@@ -45,7 +45,6 @@ class ZxingDemoActivity : ComponentActivity() {
     @SuppressLint("InflateParams")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val beepManager = BeepManager(this)
         val root = layoutInflater.inflate(R.layout.layout, null)
         barcodeView = root.findViewById(R.id.barcode_scanner)
         val formats = listOf(BarcodeFormat.QR_CODE, BarcodeFormat.CODE_39)
@@ -57,7 +56,6 @@ class ZxingDemoActivity : ComponentActivity() {
                     return
                 }
                 text.value = result.text
-                beepManager.playBeepSoundAndVibrate()
             }
         }
         barcodeView.decodeContinuous(callback)
