@@ -65,7 +65,6 @@ dependencies {
 
     def lifecycle_version = '2.4.0'
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
 
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
