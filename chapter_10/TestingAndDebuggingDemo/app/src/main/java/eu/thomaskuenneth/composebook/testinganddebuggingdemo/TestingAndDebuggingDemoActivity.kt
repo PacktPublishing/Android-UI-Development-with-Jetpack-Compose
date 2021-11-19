@@ -23,8 +23,8 @@ class TestingAndDebuggingDemoActivity : ComponentActivity() {
     }
 }
 
-private val COLOR1 = Color.White
-private val COLOR2 = Color.LightGray
+val COLOR1 = Color.White
+val COLOR2 = Color.LightGray
 
 @Composable
 fun TestingAndDebuggingDemo() {
