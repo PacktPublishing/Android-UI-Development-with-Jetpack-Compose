@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">TestingAndDebuggingDemo</string>
+    <string name="toggle">Toggle</string>
+</resources>
