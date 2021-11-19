@@ -35,7 +35,7 @@ class ViewActivity : AppCompatActivity() {
         }
         binding.slider.addOnChangeListener { _, value, _ -> viewModel.setSliderValue(value) }
         binding.composeView.run {
-            setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnViewTreeLifecycleDestroyed)
+            setViewCompositionStrategy(ViewCompositionStrategy.DisposeOnDetachedFromWindow)
             setContent {
                 val sliderValue = viewModel.sliderValue.observeAsState()
                 sliderValue.value?.let {
