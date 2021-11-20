@@ -14,11 +14,16 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 
+fun isEven(num: Int): Boolean {
+    val div2 = num / 2
+    return (div2 * 2) == num
+}
+
 class TestingAndDebuggingDemoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            TestingAndDebuggingDemo()
+            SimpleButtonDemo()
         }
     }
 }
@@ -27,7 +32,7 @@ val COLOR1 = Color.White
 val COLOR2 = Color.LightGray
 
 @Composable
-fun TestingAndDebuggingDemo() {
+fun SimpleButtonDemo() {
     var color by remember { mutableStateOf(COLOR1) }
     Box(
         modifier = Modifier
