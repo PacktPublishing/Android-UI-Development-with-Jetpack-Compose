@@ -1,11 +1,7 @@
 package eu.thomaskuenneth.composebook.testinganddebuggingdemo
 
-import org.junit.After
+import org.junit.*
 import org.junit.Assert.assertEquals
-import org.junit.Assert.assertNotEquals
-import org.junit.Before
-import org.junit.BeforeClass
-import org.junit.Test
 
 class SimpleUnitTest {
 
@@ -28,14 +24,13 @@ class SimpleUnitTest {
     }
 
     @Test
-    fun testIsEven2() {
-        println("running testIsEven2()")
-        assertEquals(isEven(2), true)
-    }
-
-    @Test
-    fun testIsEven3() {
-        println("running testIsEven3()")
-        assertNotEquals(isEven(3), true)
+    fun testListOfInts() {
+        val nums = listOf(Int.MIN_VALUE, -3, -2, 2, 3, Int.MAX_VALUE)
+        val results = listOf(true, false, true, true, false, false)
+        nums.forEachIndexed { index, num ->
+            val result = isEven(num)
+            println("isEven($num) returns $result")
+            assertEquals(result, results[index])
+        }
     }
 }
