@@ -24,6 +24,11 @@ class SimpleUnitTest {
     }
 
     @Test
+    fun testIsEvenZero() {
+        assertEquals(true, isEven(0))
+    }
+
+    @Test
     fun testListOfInts() {
         val nums = listOf(Int.MIN_VALUE, -3, -2, 2, 3, Int.MAX_VALUE)
         val results = listOf(true, false, true, true, false, false)
