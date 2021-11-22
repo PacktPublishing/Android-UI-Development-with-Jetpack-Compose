@@ -28,11 +28,28 @@ class TestingAndDebuggingDemoActivity : ComponentActivity() {
     }
 }
 
+
+@Composable
+fun SimpleButtonDemo() {
+    var text by remember { mutableStateOf("A") }
+    Box(
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.Center
+    ) {
+        Button(onClick = {
+            text = if (text == "A") "B" else "A"
+        }) {
+            Text(text = text)
+        }
+    }
+}
+
+
 val COLOR1 = Color.White
 val COLOR2 = Color.LightGray
 
 @Composable
-fun SimpleButtonDemo() {
+fun SimpleButtonDemo2() {
     var color by remember { mutableStateOf(COLOR1) }
     Box(
         modifier = Modifier
