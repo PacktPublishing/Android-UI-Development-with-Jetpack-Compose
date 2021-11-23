@@ -61,3 +61,26 @@ fun ImageDemo() {
             .background(Color.Blue)
     )
 }
+
+val COLOR1 = Color.White
+val COLOR2 = Color.LightGray
+
+@Composable
+fun BoxButtonDemo() {
+    var color by remember { mutableStateOf(COLOR1) }
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(color = color),
+        contentAlignment = Alignment.Center
+    ) {
+        Button(onClick = {
+            color = if (color == COLOR1)
+                COLOR2
+            else
+                COLOR1
+        }) {
+            Text(text = stringResource(id = R.string.toggle))
+        }
+    }
+}
