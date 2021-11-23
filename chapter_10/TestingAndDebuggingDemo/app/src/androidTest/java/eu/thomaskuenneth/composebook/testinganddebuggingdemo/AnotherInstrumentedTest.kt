@@ -1,5 +1,6 @@
 package eu.thomaskuenneth.composebook.testinganddebuggingdemo
 
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.test.assertWidthIsEqualTo
 import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithContentDescription
@@ -17,10 +18,12 @@ class AnotherInstrumentedTest {
 
     @Test
     fun testImage() {
+        var contentDescription = ""
         rule.setContent {
             ImageDemo()
+            contentDescription = stringResource(id = R.string.airport_shuttle)
         }
-        rule.onNodeWithContentDescription("Airport shuttle")
+        rule.onNodeWithContentDescription(contentDescription)
             .assertWidthIsEqualTo(128.dp)
     }
 }
