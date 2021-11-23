@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">TestingAndDebuggingDemo</string>
-    <string name="toggle">Toggle</string>
+    <string name="a">A</string>
+    <string name="b">B</string>
 </resources>
