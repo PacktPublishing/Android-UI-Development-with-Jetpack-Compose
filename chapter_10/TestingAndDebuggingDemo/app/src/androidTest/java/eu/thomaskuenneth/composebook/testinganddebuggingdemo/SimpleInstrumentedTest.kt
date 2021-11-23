@@ -1,7 +1,7 @@
 package eu.thomaskuenneth.composebook.testinganddebuggingdemo
 
+import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
-import androidx.compose.ui.test.onNodeWithText
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import org.junit.Before
 import org.junit.Rule
@@ -33,5 +33,12 @@ class SimpleInstrumentedTest {
     @Test
     fun testPrintMethodName() {
         println(name.methodName)
+    }
+
+    @Test
+    fun testLetterAfterButtonClickIsB() {
+        rule.onNodeWithText("A")
+            .performClick()
+            .assert(hasText("B"))
     }
 }
