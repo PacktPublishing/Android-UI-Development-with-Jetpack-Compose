@@ -2,4 +2,5 @@
     <string name="app_name">TestingAndDebuggingDemo</string>
     <string name="a">A</string>
     <string name="b">B</string>
+    <string name="airport_shuttle">Airport shuttle</string>
 </resources>
