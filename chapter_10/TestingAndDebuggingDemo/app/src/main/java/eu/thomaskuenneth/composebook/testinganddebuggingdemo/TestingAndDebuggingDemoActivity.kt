@@ -15,6 +15,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -64,6 +65,7 @@ fun ImageDemo() {
 
 val COLOR1 = Color.White
 val COLOR2 = Color.LightGray
+val TAG1 = "BoxButtonDemo"
 
 @Composable
 fun BoxButtonDemo() {
@@ -71,6 +73,7 @@ fun BoxButtonDemo() {
     Box(
         modifier = Modifier
             .fillMaxSize()
+            .testTag(TAG1)
             .background(color = color),
         contentAlignment = Alignment.Center
     ) {
