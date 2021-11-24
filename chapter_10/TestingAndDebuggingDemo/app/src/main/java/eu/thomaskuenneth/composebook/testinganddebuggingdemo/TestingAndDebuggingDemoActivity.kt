@@ -18,6 +18,9 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.semantics.SemanticsPropertyKey
+import androidx.compose.ui.semantics.SemanticsPropertyReceiver
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 
 fun isEven(num: Int): Boolean {
@@ -67,6 +70,9 @@ val COLOR1 = Color.White
 val COLOR2 = Color.LightGray
 val TAG1 = "BoxButtonDemo"
 
+val BackgroundColorKey = SemanticsPropertyKey<Color>("BackgroundColor")
+var SemanticsPropertyReceiver.backgroundColor by BackgroundColorKey
+
 @Composable
 fun BoxButtonDemo() {
     var color by remember { mutableStateOf(COLOR1) }
@@ -74,6 +80,7 @@ fun BoxButtonDemo() {
         modifier = Modifier
             .fillMaxSize()
             .testTag(TAG1)
+            .semantics { backgroundColor = color }
             .background(color = color),
         contentAlignment = Alignment.Center
     ) {
