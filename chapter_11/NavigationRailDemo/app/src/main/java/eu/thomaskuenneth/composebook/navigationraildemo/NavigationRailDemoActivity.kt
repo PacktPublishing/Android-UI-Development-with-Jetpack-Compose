@@ -46,7 +46,7 @@ fun NavigationRailDemo() {
 @Composable
 fun BottomBar(index: MutableState<Int>) {
     BottomNavigation() {
-        for (i in 0..4)
+        for (i in 0..2)
             BottomNavigationItem(selected = i == index.value,
                 onClick = { index.value = i },
                 icon = {
@@ -68,7 +68,22 @@ fun Content(showNavigationRail: Boolean, index: MutableState<Int>) {
         modifier = Modifier.fillMaxSize()
     ) {
         if (showNavigationRail) {
-
+            NavigationRail() {
+                for (i in 0..2)
+                    NavigationRailItem(selected = i == index.value,
+                        onClick = {
+                            index.value = i
+                        },
+                        icon = {
+                            Icon(
+                                painter = painterResource(id = R.drawable.ic_baseline_android_24),
+                                contentDescription = null
+                            )
+                        },
+                        label = {
+                            MyText(index = i)
+                        })
+            }
         }
         Box(
             modifier = Modifier.fillMaxSize(),
