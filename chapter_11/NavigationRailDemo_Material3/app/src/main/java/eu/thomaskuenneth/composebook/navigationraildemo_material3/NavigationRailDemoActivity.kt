@@ -1,4 +1,4 @@
-package eu.thomaskuenneth.composebook.navigationraildemo
+package eu.thomaskuenneth.composebook.navigationraildemo_material3
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -33,7 +33,7 @@ class NavigationRailDemoActivity : ComponentActivity() {
 @Composable
 fun NavigationRailDemo() {
     val showNavigationRail = LocalConfiguration.current.screenWidthDp >= 600
-    val selected = rememberSaveable { mutableStateOf(0) }
+    val index = rememberSaveable { mutableStateOf(0) }
     Scaffold(topBar = {
         SmallTopAppBar(title = {
             Text(text = stringResource(id = R.string.app_name))
@@ -41,9 +41,9 @@ fun NavigationRailDemo() {
     },
         bottomBar = {
             if (!showNavigationRail)
-                BottomBar(selected)
+                BottomBar(index)
         }) {
-        Content(showNavigationRail, selected)
+        Content(showNavigationRail, index)
     }
 }
 

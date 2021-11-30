@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="eu.thomaskuenneth.composebook.navigationraildemo">
+    package="eu.thomaskuenneth.composebook.navigationraildemo_material3">
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         <activity
-            android:name="eu.thomaskuenneth.composebook.navigationraildemo.NavigationRailDemoActivity"
+            android:name="eu.thomaskuenneth.composebook.navigationraildemo_material3.NavigationRailDemoActivity"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>
