@@ -22,7 +22,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.lifecycle.MutableLiveData
 import com.google.zxing.BarcodeFormat
-import com.google.zxing.client.android.BeepManager
 import com.journeyapps.barcodescanner.BarcodeCallback
 import com.journeyapps.barcodescanner.BarcodeResult
 import com.journeyapps.barcodescanner.DecoratedBarcodeView
@@ -60,8 +59,8 @@ class ZxingDemoActivity : ComponentActivity() {
         }
         barcodeView.decodeContinuous(callback)
         setContent {
-            val tet = text.observeAsState()
-            tet.value?.let {
+            val state = text.observeAsState()
+            state.value?.let {
                 ZxingDemo(root, it)
             }
         }
