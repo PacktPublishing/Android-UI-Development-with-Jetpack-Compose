@@ -1,4 +1,4 @@
-package eu.thomaskuenneth.composebook.navigationraildemo
+package eu.thomaskuenneth.composebook.navigationraildemo_material3
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -7,7 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material.*
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -19,6 +19,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 
+@ExperimentalMaterial3Api
 class NavigationRailDemoActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,12 +29,13 @@ class NavigationRailDemoActivity : ComponentActivity() {
     }
 }
 
+@ExperimentalMaterial3Api
 @Composable
 fun NavigationRailDemo() {
     val showNavigationRail = LocalConfiguration.current.screenWidthDp >= 600
     val index = rememberSaveable { mutableStateOf(0) }
     Scaffold(topBar = {
-        TopAppBar(title = {
+        SmallTopAppBar(title = {
             Text(text = stringResource(id = R.string.app_name))
         })
     },
@@ -47,9 +49,9 @@ fun NavigationRailDemo() {
 
 @Composable
 fun BottomBar(index: MutableState<Int>) {
-    BottomNavigation {
+    NavigationBar() {
         for (i in 0..2)
-            BottomNavigationItem(selected = i == index.value,
+            NavigationBarItem(selected = i == index.value,
                 onClick = { index.value = i },
                 icon = {
                     Icon(
@@ -70,7 +72,7 @@ fun Content(showNavigationRail: Boolean, index: MutableState<Int>) {
         modifier = Modifier.fillMaxSize()
     ) {
         if (showNavigationRail) {
-            NavigationRail {
+            NavigationRail() {
                 for (i in 0..2)
                     NavigationRailItem(selected = i == index.value,
                         onClick = {
@@ -90,12 +92,12 @@ fun Content(showNavigationRail: Boolean, index: MutableState<Int>) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(color = MaterialTheme.colors.surface),
+                .background(color = MaterialTheme.colorScheme.surfaceVariant),
             contentAlignment = Alignment.Center
         ) {
             MyText(
                 index = index.value,
-                style = MaterialTheme.typography.h3
+                style = MaterialTheme.typography.headlineLarge
             )
         }
     }
