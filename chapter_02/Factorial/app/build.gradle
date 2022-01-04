@@ -5,6 +5,7 @@ plugins {
 
 android {
     compileSdk 31
+    buildToolsVersion "31.0.0"
     defaultConfig {
         applicationId "eu.thomaskuenneth.composebook.hello"
         minSdk 29
