@@ -1,28 +1,56 @@
 # Android UI Development with Jetpack Compose
 
-Welcome.
+<a href="https://www.packtpub.com/product/android-ui-development-with-jetpack-compose/9781801812160"><img src="https://static.packt-cdn.com/products/9781801812160/cover/smaller" alt="Creative DIY Microcontroller Projects with C" height="256px" align="right"></a>
 
-This is the official repository to the book [Android UI Development with Jetpack Compose](https://www.packtpub.com/product/android-ui-development-with-jetpack-compose/9781801812160).
+This is the code repository for [DIY Microcontroller Projects for Hobbyists](https://www.packtpub.com/product/android-ui-development-with-jetpack-compose/9781801812160), published by Packt.
 
-<img style="-webkit-filter: drop-shadow(5px 5px 5px #222); filter: drop-shadow(5px 5px 5px #222)" src="assets/cover.jpg" width="20%" />
+**Bring declarative and native UIs to life quickly and easily on Android using Jetpack Compose**
 
-- [Thomas K&uuml;nneth](https://thomaskuenneth.eu/)
-- Packt, February 2022
-- 207 pages
-- ISBN 9781801812160
+## What is this book about?
+Jetpack Compose is Android’s new framework for building fast, beautiful, and reliable native user interfaces. It simplifies and significantly accelerates UI development on Android using the declarative approach. This book will help developers to get hands-on with Jetpack Compose and adopt a modern way of building Android applications. The book is not an introduction to Android development, but it will build on your knowledge of how Android apps are developed.
 
-To work with the samples, please download the zipped version or clone the repository to an arbitrary location on your computer. The projects require at least Android Studio Arctic Fox. You
-can download the latest version at https://developer.android.com/studio. Please follow the detailed installation instructions at https://developer.android.com/studio/install.
+This book covers the following exciting features:
+*Gain a solid understanding of the core concepts of Jetpack Compose
+*Develop beautiful, neat, and immersive UI elements that are user friendly, reliable, and performant.
+*Build a complete app using Jetpack Compose
+*Add Jetpack Compose to your existing Android applications
+*Test and debug apps that use Jetpack Compose
+*Find out how Jetpack Compose can be used on other platforms
 
-To open a project, launch Android Studio, click the *Open* button in the upper right
-area of the *Welcome to Android Studio* window, and select the base directory of
-the project in the folder selection dialog. Please make sure to **not** open the base directory
-of the repository, because Android Studio would not recognize the projects. Instead, you
-must pick the directory that contains the project you want to work with.
+If you feel this book is for you, get your [copy](https://www.amazon.com/Android-Development-Jetpack-Compose-declarative/dp/1801812160) today!
 
-To run a sample app, you need a real device or an Android Emulator. Please make
-sure that developer options and USB debugging are enabled on the real device, and
-that the device is connected to your development machine via USB or WLAN. Please
-follow the instructions at https://developer.android.com/studio/debug/
-dev-options. You can also set up an Android Emulator. You can find detailed
-instructions at https://developer.android.com/studio/run/emulator.
+## Instructions and Navigations
+All of the code is organized into folders. For example, Chapter02.
+
+The code will look like the following:
+```
+fun factorialAsString(n: Int): String {
+var result = 1L
+for (i in 1..n) {
+result *= i
+}
+return "$n! = $result"
+}
+```
+
+**Following is what you need for this book:**
+This book is for any mobile app developer looking to understand the fundamentals of the new Jetpack Compose framework and the benefits of native development. A solid understanding of Android app development, along with some knowledge of the Kotlin programming language, will be beneficial. Basic programming knowledge is necessary to grasp the concepts covered in this book effectively.
+
+With the following software and hardware list you can run all code files present in the book (Chapter 1-10).
+
+### Software and Hardware List
+| Chapter | Software/Hardware required | OS required |
+| -------- | ------------------------------------ | ----------------------------------- |
+| 1-10 | Android Studio Artic Fox | Windows, Mac OS X, and Linux |
+
+We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781801812160_ColorImages.pdf).
+
+### Related products
+* Hands-On RTOS with Microcontrollers [[Packt]](https://www.packtpub.com/product/android-programming-with-kotlin-for-beginners/9781789615401) [[Amazon]](https://www.amazon.com/dp/1789615402)
+* 
+* Architecting High-Performance Embedded Systems [[Packt]](https://www.packtpub.com/product/mastering-kotlin/9781838555726) [[Amazon]](https://www.amazon.com/dp/1838555722)
+
+## Get to Know the Author
+
+**Thomas Künneth** 
+is a Google Developer Expert for Android and has been a speaker and panelist at multiple international conferences about Android. His first Android app, published in 2010, has more than 100,000 downloads. Currently, Thomas works as a principal consultant and head of mobile at MATHEMA GmbH and has experience as a software architect and Android developer. He has authored countless articles as well as one of the top-selling German Android books (currently in its sixth edition). He has also frequently contributed to various open source projects.
