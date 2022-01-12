@@ -10,12 +10,12 @@ This is the code repository for [Android UI Development with Jetpack Compose](ht
 Jetpack Compose is Android’s new framework for building fast, beautiful, and reliable native user interfaces. It simplifies and significantly accelerates UI development on Android using the declarative approach. This book will help developers to get hands-on with Jetpack Compose and adopt a modern way of building Android applications. The book is not an introduction to Android development, but it will build on your knowledge of how Android apps are developed.
 
 This book covers the following exciting features:
-*Gain a solid understanding of the core concepts of Jetpack Compose
-*Develop beautiful, neat, and immersive UI elements that are user friendly, reliable, and performant.
-*Build a complete app using Jetpack Compose
-*Add Jetpack Compose to your existing Android applications
-*Test and debug apps that use Jetpack Compose
-*Find out how Jetpack Compose can be used on other platforms
+* Gain a solid understanding of the core concepts of Jetpack Compose
+* Develop beautiful, neat, and immersive UI elements that are user friendly, reliable, and performant.
+* Build a complete app using Jetpack Compose
+* Add Jetpack Compose to your existing Android applications
+* Test and debug apps that use Jetpack Compose
+* Find out how Jetpack Compose can be used on other platforms
 
 If you feel this book is for you, get your [copy](https://www.amazon.com/Android-Development-Jetpack-Compose-declarative/dp/1801812160) today!
 
@@ -26,11 +26,11 @@ All of the code is organized into folders. For example, Chapter02.
 The code will look like the following:
 ```
 fun factorialAsString(n: Int): String {
-var result = 1L
-for (i in 1..n) {
-result *= i
-}
-return "$n! = $result"
+     var result = 1L
+     for (i in 1..n) {
+       result *= i
+      }
+      return "$n! = $result"
 }
 ```
 
