@@ -2,7 +2,7 @@
 
 <a href="https://www.packtpub.com/product/android-ui-development-with-jetpack-compose/9781801812160"><img src="https://static.packt-cdn.com/products/9781801812160/cover/smaller" alt="Creative DIY Microcontroller Projects with C" height="256px" align="right"></a>
 
-This is the code repository for [DIY Microcontroller Projects for Hobbyists](https://www.packtpub.com/product/android-ui-development-with-jetpack-compose/9781801812160), published by Packt.
+This is the code repository for [Android UI Development with Jetpack Compose](https://www.packtpub.com/product/android-ui-development-with-jetpack-compose/9781801812160), published by Packt.
 
 **Bring declarative and native UIs to life quickly and easily on Android using Jetpack Compose**
 
@@ -18,6 +18,7 @@ This book covers the following exciting features:
 *Find out how Jetpack Compose can be used on other platforms
 
 If you feel this book is for you, get your [copy](https://www.amazon.com/Android-Development-Jetpack-Compose-declarative/dp/1801812160) today!
+
 
 ## Instructions and Navigations
 All of the code is organized into folders. For example, Chapter02.
@@ -43,14 +44,17 @@ With the following software and hardware list you can run all code files present
 | -------- | ------------------------------------ | ----------------------------------- |
 | 1-10 | Android Studio Artic Fox | Windows, Mac OS X, and Linux |
 
+
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781801812160_ColorImages.pdf).
 
 ### Related products
 * Hands-On RTOS with Microcontrollers [[Packt]](https://www.packtpub.com/product/android-programming-with-kotlin-for-beginners/9781789615401) [[Amazon]](https://www.amazon.com/dp/1789615402)
-* 
+
 * Architecting High-Performance Embedded Systems [[Packt]](https://www.packtpub.com/product/mastering-kotlin/9781838555726) [[Amazon]](https://www.amazon.com/dp/1838555722)
+
 
 ## Get to Know the Author
 
 **Thomas Künneth** 
 is a Google Developer Expert for Android and has been a speaker and panelist at multiple international conferences about Android. His first Android app, published in 2010, has more than 100,000 downloads. Currently, Thomas works as a principal consultant and head of mobile at MATHEMA GmbH and has experience as a software architect and Android developer. He has authored countless articles as well as one of the top-selling German Android books (currently in its sixth edition). He has also frequently contributed to various open source projects.
+
