@@ -49,7 +49,7 @@ fun NavigationRailDemo() {
 
 @Composable
 fun BottomBar(index: MutableState<Int>) {
-    NavigationBar() {
+    NavigationBar {
         for (i in 0..2)
             NavigationBarItem(selected = i == index.value,
                 onClick = { index.value = i },
@@ -72,7 +72,7 @@ fun Content(showNavigationRail: Boolean, index: MutableState<Int>) {
         modifier = Modifier.fillMaxSize()
     ) {
         if (showNavigationRail) {
-            NavigationRail() {
+            NavigationRail {
                 for (i in 0..2)
                     NavigationRailItem(selected = i == index.value,
                         onClick = {
