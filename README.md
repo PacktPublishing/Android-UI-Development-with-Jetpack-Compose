@@ -54,7 +54,10 @@ Click on the following link to see the Code in Action:
 [YouTube](https://youtube.com/playlist?list=PLeLcvrwLe185fVqoeU-TOSDBeNgPk7Itj)
 
 <!--
-Page 141 (Paragraph 3, Line 3):**android:the"e="@styl"/..."** _should be_ **android:theme="@style/...".**
+## Errata
+-->
+<!--
+*Page 141 (Paragraph 3, Line 3):**android:the"e="@styl"/..."** _should be_ **android:theme="@style/...".**
 -->
 
 ### Related products
