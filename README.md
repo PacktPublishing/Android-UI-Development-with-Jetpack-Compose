@@ -55,7 +55,7 @@ Click on the following link to see the Code in Action:
 
 ## Errata
 
-*Page 141 (Paragraph 3, Line 3):**android:the"e="@styl"/..."** _should be_ **android:theme="@style/...".**
+*Page 141 (Paragraph 3, Line 3): **android:the"e="@styl"/..."** _should be_ **android:theme="@style/...".**
 
 
 ### Related products
