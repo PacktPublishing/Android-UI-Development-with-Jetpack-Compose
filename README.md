@@ -53,12 +53,10 @@ Click on the following link to see the Code in Action:
 
 [YouTube](https://youtube.com/playlist?list=PLeLcvrwLe185fVqoeU-TOSDBeNgPk7Itj)
 
-<!--
 ## Errata
--->
-<!--
+
 *Page 141 (Paragraph 3, Line 3):**android:the"e="@styl"/..."** _should be_ **android:theme="@style/...".**
--->
+
 
 ### Related products
 * Hands-On RTOS with Microcontrollers [[Packt]](https://www.packtpub.com/product/android-programming-with-kotlin-for-beginners/9781789615401) [[Amazon]](https://www.amazon.com/dp/1789615402)
