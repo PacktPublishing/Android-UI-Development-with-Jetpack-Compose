@@ -33,6 +33,7 @@ class AnimationDemoActivity : ComponentActivity() {
     }
 }
 
+@Preview
 @Composable
 fun StateChangeDemo() {
     var toggled by remember {
@@ -105,14 +106,17 @@ fun MultipleValuesAnimationDemo() {
     var toggled by remember {
         mutableStateOf(false)
     }
-    val transition = updateTransition(targetState = toggled)
-    val borderWidth by transition.animateDp() { state ->
+    val transition = updateTransition(
+        targetState = toggled,
+        label = "toggledTransition"
+    )
+    val borderWidth by transition.animateDp(label = "borderWidthTransition") { state ->
         if (state)
             10.dp
         else
             1.dp
     }
-    val degrees by transition.animateFloat() { state ->
+    val degrees by transition.animateFloat(label = "degreesTransition") { state ->
         if (state) -90F
         else
             0F
@@ -187,6 +191,7 @@ fun AnimatedVisibilityDemo() {
     }
 }
 
+@Preview
 @Composable
 fun SizeChangeAnimationDemo() {
     var size by remember { mutableStateOf(1F) }
@@ -215,6 +220,7 @@ fun SizeChangeAnimationDemo() {
     }
 }
 
+@Preview
 @Composable
 fun CrossfadeAnimationDemo() {
     var isFirstScreen by remember { mutableStateOf(true) }
@@ -230,7 +236,7 @@ fun CrossfadeAnimationDemo() {
             },
             modifier = Modifier.padding(top = 16.dp, bottom = 16.dp)
         )
-        Crossfade(targetState = isFirstScreen) { it ->
+        Crossfade(targetState = isFirstScreen) {
             if (it) {
                 Screen(
                     text = stringResource(id = R.string.letter_w),
