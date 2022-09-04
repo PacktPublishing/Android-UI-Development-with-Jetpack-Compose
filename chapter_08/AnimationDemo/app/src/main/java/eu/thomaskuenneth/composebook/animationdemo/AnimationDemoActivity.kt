@@ -271,6 +271,7 @@ fun Screen(
 }
 
 @Composable
+@Preview
 fun InfiniteRepeatableDemo() {
     val infiniteTransition = rememberInfiniteTransition()
     val degrees by infiniteTransition.animateFloat(
