@@ -4,10 +4,12 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.MoreVert
 import androidx.compose.runtime.*
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.ViewModelProvider
@@ -55,7 +57,8 @@ fun ComposeUnitConverter(factory: ViewModelFactory) {
         ) {
             ComposeUnitConverterNavHost(
                 navController = navController,
-                factory = factory
+                factory = factory,
+                modifier = Modifier.padding(it)
             )
         }
     }
@@ -124,11 +127,13 @@ fun ComposeUnitConverterBottomBar(navController: NavHostController) {
 @Composable
 fun ComposeUnitConverterNavHost(
     navController: NavHostController,
-    factory: ViewModelProvider.Factory?
+    factory: ViewModelProvider.Factory?,
+    modifier: Modifier
 ) {
     NavHost(
         navController = navController,
-        startDestination = ComposeUnitConverterScreen.route_temperature
+        startDestination = ComposeUnitConverterScreen.route_temperature,
+        modifier = modifier
     ) {
         composable(ComposeUnitConverterScreen.route_temperature) {
             TemperatureConverter(
