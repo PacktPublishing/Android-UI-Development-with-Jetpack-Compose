@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -40,8 +41,12 @@ fun NavigationRailDemo() {
         bottomBar = {
             if (!showNavigationRail)
                 BottomBar(index)
-        }) {
-        Content(showNavigationRail, index)
+        }) { padding ->
+        Content(
+            modifier = Modifier.padding(padding),
+            showNavigationRail = showNavigationRail,
+            index = index
+        )
     }
 }
 
@@ -65,9 +70,13 @@ fun BottomBar(index: MutableState<Int>) {
 }
 
 @Composable
-fun Content(showNavigationRail: Boolean, index: MutableState<Int>) {
+fun Content(
+    modifier: Modifier = Modifier,
+    showNavigationRail: Boolean,
+    index: MutableState<Int>
+) {
     Row(
-        modifier = Modifier.fillMaxSize()
+        modifier = modifier.fillMaxSize()
     ) {
         if (showNavigationRail) {
             NavigationRail {

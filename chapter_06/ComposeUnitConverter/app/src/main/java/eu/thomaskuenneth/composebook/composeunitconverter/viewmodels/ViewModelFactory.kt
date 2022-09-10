@@ -6,7 +6,7 @@ import eu.thomaskuenneth.composebook.composeunitconverter.Repository
 
 class ViewModelFactory(private val repository: Repository) :
     ViewModelProvider.NewInstanceFactory() {
-    override fun <T : ViewModel?> create(modelClass: Class<T>): T =
+    override fun <T : ViewModel> create(modelClass: Class<T>): T =
         if (modelClass.isAssignableFrom(TemperatureViewModel::class.java))
             TemperatureViewModel(repository) as T
         else

@@ -68,7 +68,7 @@ fun ImageDemo() {
 
 val COLOR1 = Color.White
 val COLOR2 = Color.LightGray
-val TAG1 = "BoxButtonDemo"
+const val TAG1 = "BoxButtonDemo"
 
 val BackgroundColorKey = SemanticsPropertyKey<Color>("BackgroundColor")
 var SemanticsPropertyReceiver.backgroundColor by BackgroundColorKey

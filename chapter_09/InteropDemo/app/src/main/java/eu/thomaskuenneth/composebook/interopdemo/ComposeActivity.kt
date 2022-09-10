@@ -49,10 +49,11 @@ fun ViewIntegrationDemo(viewModel: MyViewModel, onClick: () -> Unit) {
             {
                 Text(text = stringResource(id = R.string.compose_activity))
             })
-        }) {
+        }) { padding ->
         Column(
             modifier = Modifier
                 .fillMaxSize()
+                .padding(padding)
                 .padding(16.dp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
