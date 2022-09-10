@@ -67,5 +67,5 @@ Click on the following link to see the Code in Action:
 ## Get to Know the Author
 
 **Thomas Künneth** 
-is a Google Developer Expert for Android and has been a speaker and panelist at multiple international conferences about Android. His first Android app, published in 2010, has more than 100,000 downloads. Currently, Thomas works as a principal consultant and head of mobile at MATHEMA GmbH and has experience as a software architect and Android developer. He has authored countless articles as well as one of the top-selling German Android books (currently in its sixth edition). He has also frequently contributed to various open source projects.
+is a Google Developer Expert for Android and has been a speaker and panelist at multiple international conferences about Android. His first Android app, published in 2010, has more than 100,000 downloads. Currently, Thomas works as a senior Android developer at Snapp Mobile. He has authored countless articles as well as one of the top-selling German Android books (currently in its sixth edition). He has also frequently contributed to various open source projects.
 
