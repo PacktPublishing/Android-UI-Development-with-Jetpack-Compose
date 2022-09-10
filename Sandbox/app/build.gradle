@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
-    buildToolsVersion "31.0.0"
+    compileSdk 33
+
     defaultConfig {
         applicationId "eu.thomaskuenneth.composebook.sandbox"
         minSdk 28
-        targetSdk 31
+        targetSdk 33
         versionCode 1
         versionName "1.0"
         vectorDrawables {
@@ -31,7 +31,6 @@ android {
 
     kotlinOptions {
         jvmTarget = '11'
-        useIR = true
     }
 
     buildFeatures {
@@ -39,18 +38,18 @@ android {
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerExtensionVersion "1.2.0"
     }
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'androidx.core:core-ktx:1.9.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'com.google.android.material:material:1.6.1'
     implementation "androidx.compose.ui:ui:$compose_version"
     implementation "androidx.compose.material:material:$compose_version"
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.4.1'
-    implementation 'androidx.activity:activity-compose:1.4.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.1'
+    implementation 'androidx.activity:activity-compose:1.5.1'
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
 }
