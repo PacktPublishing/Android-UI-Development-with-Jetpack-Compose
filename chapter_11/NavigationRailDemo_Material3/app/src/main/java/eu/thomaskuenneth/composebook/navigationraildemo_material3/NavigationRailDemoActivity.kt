@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -35,15 +36,18 @@ fun NavigationRailDemo() {
     val showNavigationRail = LocalConfiguration.current.screenWidthDp >= 600
     val index = rememberSaveable { mutableStateOf(0) }
     Scaffold(topBar = {
-        SmallTopAppBar(title = {
+        TopAppBar(title = {
             Text(text = stringResource(id = R.string.app_name))
         })
     },
         bottomBar = {
             if (!showNavigationRail)
                 BottomBar(index)
-        }) {
-        Content(showNavigationRail, index)
+        }) { padding ->
+        Content(showNavigationRail, index,
+            Modifier
+                .fillMaxSize()
+                .padding(padding))
     }
 }
 
@@ -67,9 +71,9 @@ fun BottomBar(index: MutableState<Int>) {
 }
 
 @Composable
-fun Content(showNavigationRail: Boolean, index: MutableState<Int>) {
+fun Content(showNavigationRail: Boolean, index: MutableState<Int>, modifier: Modifier) {
     Row(
-        modifier = Modifier.fillMaxSize()
+        modifier = modifier
     ) {
         if (showNavigationRail) {
             NavigationRail {
