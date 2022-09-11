@@ -47,6 +47,14 @@ With the following software and hardware list you can run all code files present
 
 We also provide a PDF file that has color images of the screenshots/diagrams used in this book. [Click here to download it](https://static.packt-cdn.com/downloads/9781801812160_ColorImages.pdf).
 
+### Branches
+
+Like any other software, Jetpack Compose evolves. To make sure that you always have a version of the code that reflects the printed version of the book (`compose_1.0`), and one that uses the latest stable version (`compose_1.2`), we maintain several branches:
+
+- [compose_1.0](https://github.com/PacktPublishing/Android-UI-Development-with-Jetpack-Compose/tree/compose_1.0)
+- [compose_1.1](https://github.com/PacktPublishing/Android-UI-Development-with-Jetpack-Compose/tree/compose_1.1)
+- [compose_1.2](https://github.com/PacktPublishing/Android-UI-Development-with-Jetpack-Compose/tree/compose_1.2)
+
 ## Code in Action
 
 Click on the following link to see the Code in Action:
