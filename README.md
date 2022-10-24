@@ -77,3 +77,7 @@ Click on the following link to see the Code in Action:
 **Thomas Künneth** 
 is a Google Developer Expert for Android and has been a speaker and panelist at multiple international conferences about Android. His first Android app, published in 2010, has more than 100,000 downloads. Currently, Thomas works as a senior Android developer at Snapp Mobile. He has authored countless articles as well as one of the top-selling German Android books (currently in its sixth edition). He has also frequently contributed to various open source projects.
 
+### Download a free PDF
+
+ <i>If you have already purchased a print or Kindle version of this book, you can get a DRM-free PDF version at no cost.<br>Simply click on the link to claim your free PDF.</i>
+<p align="center"> <a href="https://packt.link/free-ebook/9781801812160">https://packt.link/free-ebook/9781801812160 </a> </p>
