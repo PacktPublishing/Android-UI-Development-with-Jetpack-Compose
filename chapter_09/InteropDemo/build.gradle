@@ -1,6 +1,6 @@
 buildscript {
     ext {
-        compose_version = '1.2.1'
+        compose_version = '1.4.3'
     }
     repositories {
         google()
@@ -8,7 +8,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.3.0'
-        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.0'
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.8.21'
     }
 }
 
